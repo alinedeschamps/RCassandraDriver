@@ -1,0 +1,5 @@
+PKG_LIBS = -L./$(R_ARCH) -lcassandra -llibuv -llibeay32 -lssleay32
+
+PKG_CXXFLAGS= -I./$(R_ARCH)/include
+
+all: $(SHLIB) ./$(R_ARCH)/cassandra.dll ./$(R_ARCH)/libuv.dll ./$(R_ARCH)/libeay32.dll ./$(R_ARCH)/ssleay32.dll
