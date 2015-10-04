@@ -1,5 +1,10 @@
-PKG_LIBS = -L./$(R_ARCH) -lcassandra -llibuv -llibeay32 -lssleay32
+#OBJECTS=cassandra.dll libeay32.dll libuv.dll ssleay32.dll
 
-PKG_CXXFLAGS= -I./$(R_ARCH)/include
+PKG_LIBS = -L./win/$(R_ARCH) -lcassandra -llibuv -llibeay32 -lssleay32
 
-all: $(SHLIB) ./$(R_ARCH)/cassandra.dll ./$(R_ARCH)/libuv.dll ./$(R_ARCH)/libeay32.dll ./$(R_ARCH)/ssleay32.dll
+PKG_CXXFLAGS= -I./win/$(R_ARCH)/include
+
+all: $(SHLIB) ./win/$(R_ARCH)/cassandra.dll ./win/$(R_ARCH)/libuv.dll ./win/$(R_ARCH)/libeay32.dll ./win/$(R_ARCH)/ssleay32.dll copydll
+
+copydll:
+		cp ./win/${R_ARCH}/*.dll ./

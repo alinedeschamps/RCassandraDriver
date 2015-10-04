@@ -1,1 +1,6 @@
 exportPattern("^[[:alpha:]]+")
+#useDynLib("ssleay32")
+#useDynLib("libeay32")
+useDynLib("libuv")
+useDynLib("cassandra")
+useDynLib("RCassandraDriver")
